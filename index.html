@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TACTIKA · Todo el fútbol en una sola jugada</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+ <div class="head">
+  <a class="brand" href="#inicio">
+   <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="19" fill="none" stroke="#c6f432" stroke-width="2"/><path d="M11 29 L21 11 L31 29" fill="none" stroke="#f5f5f0" stroke-width="2.5"/><circle cx="21" cy="11" r="3.5" fill="#c6f432"/><circle cx="11" cy="29" r="3.5" fill="#c6f432"/><circle cx="31" cy="29" r="3.5" fill="#c6f432"/></svg>
+   <span><b>TACTIKA</b><small>Todo el fútbol, en una sola jugada</small></span>
+  </a>
+  <nav><ul>
+   <li><a href="#inicio">Inicio</a></li>
+   <li><a href="#simulador">Simulador táctico</a></li>
+   <li><a href="#archivo">Archivo editorial</a></li>
+   <li><a href="#ligas">Gestión de ligas</a></li>
+  </ul></nav>
+ </div>
+</header>
+
+<main>
+<div class="wrap" id="inicio">
+ <div class="hero">
+  <div>
+   <span class="tag">Startup deportiva · Web app</span>
+   <h1>El fútbol se piensa, se cuenta y se <span>organiza</span> aquí.</h1>
+   <p class="lead">TACTIKA reúne tres herramientas que corren directo en el navegador, sin instalar nada: pizarras tácticas para que tus jugadores vean la jugada, un archivo editorial para no perder la historia del juego y un sistema para organizar torneos de barrio.</p>
+   <p><a class="btn" href="#simulador">Probar la pizarra</a><a class="btn o" href="#ligas">Organizar un torneo</a></p>
+  </div>
+  <div class="video">
+   <span class="rec">DEMO EN VIVO</span>
+   <svg viewBox="0 0 400 260" role="img" aria-label="Animación de una jugada táctica">
+    <rect width="400" height="260" fill="#0f1b2d"/>
+    <g fill="none" stroke="#f5f5f0" stroke-opacity=".35" stroke-width="1.5"><rect x="10" y="10" width="380" height="240"/><line x1="200" y1="10" x2="200" y2="250"/><circle cx="200" cy="130" r="32"/><rect x="10" y="80" width="50" height="100"/><rect x="340" y="80" width="50" height="100"/></g>
+    <path id="r" d="M80 190 C140 190 160 70 240 100 S330 130 360 130" fill="none" stroke="#c6f432" stroke-width="2" stroke-dasharray="6 6"><animate attributeName="stroke-dashoffset" from="0" to="-48" dur="1.5s" repeatCount="indefinite"/></path>
+    <g fill="#c6f432"><circle cx="80" cy="190" r="9"/><circle cx="240" cy="100" r="9"><animate attributeName="r" values="9;12;9" dur="1.5s" repeatCount="indefinite"/></circle></g>
+    <g fill="#f5f5f0"><circle cx="150" cy="60" r="9"/><circle cx="290" cy="190" r="9"/><circle cx="330" cy="80" r="9"/></g>
+    <circle r="6" fill="#f5f5f0" stroke="#0f1b2d" stroke-width="2"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#r"/></animateMotion></circle>
+   </svg>
+  </div>
+ </div>
+ <div class="pilares">
+  <div class="pilar"><h3>Innovador</h3><p>Pizarras y simuladores que funcionan en el celular, sin descargas.</p></div>
+  <div class="pilar"><h3>Creativo</h3><p>Diseño editorial para contar la historia del fútbol como nunca.</p></div>
+  <div class="pilar"><h3>Emprendedor</h3><p>Herramientas para que cualquier liga de barrio se profesionalice.</p></div>
+ </div>
+</div>
+
+<!-- IDEA 5 -->
+<section id="simulador"><div class="wrap">
+ <div class="num">01</div>
+ <span class="tag">Simuladores tácticos y de gestión en la nube</span>
+ <h2>La pizarra que tus jugadores sí ven</h2>
+ <p class="lead">Elige fútbol 11 o fútbol 7, cambia la alineación y pide recomendaciones de jugadas al asistente táctico. El entrenador arma todo y el equipo lo consulta desde su celular.</p>
+ <div class="board">
+  <div class="pitch">
+   <svg viewBox="0 0 400 260" id="cancha" role="img" aria-label="Pizarra táctica">
+    <rect width="400" height="260" fill="#0f1b2d"/>
+    <g fill="none" stroke="#f5f5f0" stroke-opacity=".4" stroke-width="1.5"><rect x="8" y="8" width="384" height="244"/><line x1="200" y1="8" x2="200" y2="252"/><circle cx="200" cy="130" r="32"/><rect x="8" y="80" width="50" height="100"/><rect x="342" y="80" width="50" height="100"/></g>
+   </svg>
+  </div>
+  <div class="panel">
+   <h3>Modalidad</h3>
+   <div class="chips" id="modeChips"></div>
+   <h3>Alineación</h3>
+   <div class="chips" id="chips"></div>
+   <p id="desc" class="lead" style="margin:0 0 14px"></p>
+   <h3>Asistente táctico</h3>
+   <label>El rival juega
+    <select id="aiRival"><option value="ofensivo">Muy ofensivo, adelanta líneas</option><option value="cerrado">Cerrado, se encierra atrás</option><option value="presion">Con presión alta</option><option value="igual">Parejo, equilibrado</option></select>
+   </label>
+   <label style="margin-top:10px">Tu equipo destaca en
+    <select id="aiFuerte"><option value="velocidad">Velocidad</option><option value="tecnica">Técnica</option><option value="fuerza">Fuerza y juego aéreo</option><option value="equilibrio">Equilibrio y físico</option></select>
+   </label>
+   <p><button class="btn" id="aiGo" type="button">Recomendar</button><button class="btn o" id="aiClear" type="button">Limpiar jugada</button></p>
+   <div id="aiOut"></div>
+   <p class="nota">Asistente basado en reglas tácticas: sugiere alineación y jugadas según el rival y las virtudes de tu equipo.</p>
+  </div>
+ </div>
+</div></section>
+
+<!-- IDEA 4 -->
+<section id="archivo"><div class="wrap">
+ <div class="num">02</div>
+ <span class="tag">Archivos digitales e historias editoriales interactivas</span>
+ <h2>Scrapbooking futbolístico</h2>
+ <p class="lead">Un archivo vivo con partidos históricos, jugadores legendarios y campañas inolvidables. Elige una categoría, lee la historia y abre los videos para verla en acción.</p>
+ <div class="chips" id="histTabs"></div>
+ <div class="hgrid" id="histGrid"></div>
+</div></section>
+
+<!-- IDEA 2 -->
+<section id="ligas"><div class="wrap">
+ <div class="num">03</div>
+ <span class="tag">Ecosistemas de gestión para fútbol base y ligas amateurs</span>
+ <h2>Tu torneo barrial, organizado</h2>
+ <p class="lead">Registra tus equipos, crea el calendario automático y captura los resultados. La tabla de posiciones, los goles y la diferencia de goles se actualizan solos.</p>
+ <div class="panel" id="setup">
+  <h3>1. Crea tu torneo</h3>
+  <div class="row">
+   <label>Nombre del torneo<input id="tName" value="Copa del Barrio"></label>
+   <label>Formato<select id="tFmt"><option value="1">Solo ida</option><option value="2">Ida y vuelta</option></select></label>
+   <label>Puntos por victoria<select id="tPts"><option>3</option><option>2</option></select></label>
+  </div>
+  <label>Agrega equipos (Enter para añadir)
+   <span class="add"><input id="teamIn" placeholder="Nombre del equipo"><button class="btn" id="addTeam" type="button">Agregar</button></span>
+  </label>
+  <div class="chips" id="teamList"></div>
+  <p><button class="btn" id="crear" type="button">Crear torneo y calendario</button><button class="btn o" id="demo" type="button">Cargar ejemplo</button></p>
+  <p id="msg" class="lead"></p>
+ </div>
+ <div id="torneo" hidden>
+  <div class="thead"><h3 id="tTitle"></h3><button class="chip" id="reset" type="button">Nuevo torneo</button></div>
+  <div class="stats" id="stats"></div>
+  <div class="tw"><table id="tabla"></table></div>
+  <h3>Calendario y resultados</h3>
+  <p class="lead">Escribe los goles de cada partido. Puedes corregirlos cuando quieras.</p>
+  <div class="cal" id="cal"></div>
+ </div>
+</div></section>
+</main>
+
+<footer><div class="wrap foot">
+ <div><b>TACTIKA</b><br>Todo el fútbol, en una sola jugada.</div>
+ <div>Simulador táctico · Archivo editorial · Gestión de ligas</div>
+ <div>© 2026 TACTIKA · Proyecto final</div>
+</div></footer>
+
+<script src="script.js"></script>
+</body>
+</html>

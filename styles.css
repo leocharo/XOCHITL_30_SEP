@@ -1,0 +1,130 @@
+:root{--fondo:#0f1b2d;--acento:#c6f432;--texto:#f5f5f0;--suave:rgba(245,245,240,.7);--linea:rgba(245,245,240,.18);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--fondo);color:var(--texto);font-family:'Segoe UI',Helvetica,Arial,sans-serif;line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+/* Encabezado */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--fondo);border-bottom:1px solid var(--linea)}
+.head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px;max-width:1100px;margin:0 auto;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand b{display:block;font-size:1.3rem;letter-spacing:.12em}
+.brand small{display:block;color:var(--acento);font-size:.75rem}
+nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{display:block;padding:8px 14px;border-radius:20px;text-decoration:none;font-size:.9rem}
+nav a:hover{background:var(--acento);color:var(--fondo)}
+/* Inicio */
+.hero{padding:56px 0 40px;display:grid;gap:32px;grid-template-columns:1fr 1fr;align-items:center}
+.tag{color:var(--acento);text-transform:uppercase;letter-spacing:.2em;font-size:.8rem}
+h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.05;margin:.3em 0}
+h1 span{color:var(--acento)}
+.btn{display:inline-block;background:var(--acento);color:var(--fondo);font-weight:700;padding:12px 24px;border-radius:30px;text-decoration:none;border:0;cursor:pointer;font-size:1rem}
+.btn.o{background:none;color:var(--texto);border:1px solid var(--acento);margin-left:8px}
+.video{border:1px solid var(--linea);border-radius:16px;overflow:hidden;position:relative}
+.video svg{display:block;width:100%;height:auto}
+.rec{position:absolute;top:10px;left:12px;font-size:.75rem;background:var(--fondo);padding:3px 10px;border-radius:12px}
+.rec::before{content:"● ";color:var(--acento);animation:p 1s infinite}
+@keyframes p{50%{opacity:.2}}
+.pilares{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-bottom:56px}
+.pilar{border:1px solid var(--linea);border-radius:14px;padding:20px}
+.pilar h3{margin:0 0 6px;color:var(--acento)}
+.pilar p{margin:0;color:var(--suave)}
+/* Secciones */
+section{padding:64px 0;border-top:1px solid var(--linea)}
+.num{font-size:5rem;font-weight:800;color:transparent;-webkit-text-stroke:1px var(--acento);line-height:1}
+h2{font-size:clamp(1.8rem,4vw,2.8rem);margin:.1em 0 .3em}
+.lead{color:var(--suave);max-width:680px}
+/* Pizarra */
+.board{display:grid;grid-template-columns:2fr 1fr;gap:24px;margin-top:28px}
+.pitch{border:2px solid var(--acento);border-radius:14px;overflow:hidden}
+.pitch svg{display:block;width:100%;height:auto}
+.ply{transition:transform .8s cubic-bezier(.4,0,.2,1)}
+.panel{border:1px solid var(--linea);border-radius:14px;padding:20px}
+.panel h3{margin-top:0}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.chip{background:none;color:var(--texto);border:1px solid var(--linea);padding:8px 16px;border-radius:20px;cursor:pointer;font-size:.95rem}
+.chip.on{background:var(--acento);color:var(--fondo);border-color:var(--acento);font-weight:700}
+.panel ul{padding-left:18px;color:var(--suave);margin:8px 0 0}
+/* Archivo editorial */
+.grid{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:170px;gap:12px;margin-top:28px}
+.c{border:1px solid var(--linea);border-radius:14px;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;transition:background .4s,color .4s}
+.c:hover{background:var(--acento);color:var(--fondo)}
+.c:hover small,.c:hover p{color:var(--fondo)}
+.c small{color:var(--acento);letter-spacing:.15em;text-transform:uppercase;font-size:.7rem}
+.c .big{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;line-height:1;margin:4px 0}
+.c p{margin:4px 0 0;color:var(--suave);font-size:.9rem}
+.c.a{grid-column:span 4;grid-row:span 2}
+.c.b{grid-column:span 2}
+.c.d{grid-column:span 2}
+.c.e{grid-column:span 3}
+.c.f{grid-column:span 3}
+/* Ligas */
+.liga{display:grid;grid-template-columns:1fr 1.3fr;gap:24px;margin-top:28px}
+.feat{display:grid;gap:12px;margin-bottom:0}
+.feat div{border-left:3px solid var(--acento);padding-left:14px}
+.feat b{display:block}
+.feat span{color:var(--suave);font-size:.92rem}
+textarea{width:100%;background:var(--fondo);color:var(--texto);border:1px solid var(--linea);border-radius:10px;padding:10px;font:inherit;resize:vertical}
+.fix{margin-top:14px;max-height:320px;overflow:auto}
+.fix h4{margin:12px 0 4px;color:var(--acento)}
+.fix div{display:flex;justify-content:space-between;border-bottom:1px solid var(--linea);padding:4px 0;font-size:.92rem;gap:8px}
+/* Pie */
+footer{border-top:1px solid var(--linea);padding:36px 0;color:var(--suave)}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer b{color:var(--acento)}
+@media(max-width:800px){
+ .hero,.board,.liga{grid-template-columns:1fr}
+ .pilares{grid-template-columns:1fr}
+ .grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+ .c.a{grid-column:span 2}.c.b,.c.d{grid-column:span 1}.c.e,.c.f{grid-column:span 2}
+ .btn.o{margin:8px 0 0}
+}
+
+/* Historia */
+.hgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:20px}
+.hc{border:1px solid var(--linea);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:6px;transition:background .4s,color .4s}
+.hc:hover{background:var(--acento);color:var(--fondo)}
+.hc:hover p,.hc:hover small{color:var(--fondo)}
+.hc small{color:var(--acento);letter-spacing:.15em;text-transform:uppercase;font-size:.72rem}
+.hc .yr{font-size:2.8rem;font-weight:800;line-height:1}
+.hc h3{margin:0;font-size:1.2rem}
+.hc p{margin:0;color:var(--suave);font-size:.93rem;flex:1}
+.hc a{font-weight:700;text-decoration:none;margin-top:6px}
+.hc a:hover{text-decoration:underline}
+/* Torneo */
+.row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin-bottom:12px}
+label{display:block;font-size:.9rem;color:var(--suave)}
+input,select{display:block;width:100%;margin-top:4px;background:var(--fondo);color:var(--texto);border:1px solid var(--linea);border-radius:10px;padding:10px;font:inherit}
+.add{display:flex;gap:8px;margin-top:4px}
+.add input{margin:0}
+.thead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:28px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}
+.stats div{border:1px solid var(--linea);border-radius:12px;padding:12px}
+.stats b{display:block;font-size:1.4rem;color:var(--acento)}
+.stats span{font-size:.8rem;color:var(--suave)}
+.tw{overflow-x:auto;border:1px solid var(--linea);border-radius:14px}
+table{border-collapse:collapse;width:100%;min-width:520px}
+th,td{padding:10px 8px;text-align:center;border-bottom:1px solid var(--linea)}
+th{color:var(--acento);font-size:.78rem;text-transform:uppercase}
+td.n,th.n{text-align:left}
+tr.top td{font-weight:700}
+tr.top td:first-child{color:var(--acento)}
+td.pts{font-weight:800;color:var(--acento)}
+.cal{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.jor{border:1px solid var(--linea);border-radius:14px;padding:14px}
+.jor h4{margin:0 0 8px;color:var(--acento)}
+.mt{display:grid;grid-template-columns:1fr 50px 10px 50px 1fr;gap:6px;align-items:center;padding:5px 0;font-size:.9rem}
+.mt span:first-child{text-align:right}
+.mt input{margin:0;padding:6px;text-align:center}
+@media(max-width:800px){.row{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}}
+
+/* Asistente */
+.board{grid-template-columns:1.5fr 1fr}
+.panel h3{margin:14px 0 6px}
+.panel h3:first-child{margin-top:0}
+.aiplay{border-left:3px solid var(--acento);padding:6px 12px;margin:10px 0}
+.aiplay b{display:block}
+.aiplay span{display:block;color:var(--suave);font-size:.9rem;margin:2px 0 6px}
+.aiplay .chip{padding:5px 12px;font-size:.85rem}
+.nota{font-size:.8rem;color:var(--suave);margin:10px 0 0}
+@media(max-width:800px){.board{grid-template-columns:1fr}}
