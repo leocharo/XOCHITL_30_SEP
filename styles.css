@@ -128,3 +128,6 @@ td.pts{font-weight:800;color:var(--acento)}
 .aiplay .chip{padding:5px 12px;font-size:.85rem}
 .nota{font-size:.8rem;color:var(--suave);margin:10px 0 0}
 @media(max-width:800px){.board{grid-template-columns:1fr}}
+/* Botón instalar app */
+.instalar{background:var(--acento);color:var(--fondo);border:0;border-radius:20px;padding:8px 16px;font:inherit;font-size:.9rem;font-weight:700;cursor:pointer}
+.instalar:hover{filter:brightness(1.1)}
